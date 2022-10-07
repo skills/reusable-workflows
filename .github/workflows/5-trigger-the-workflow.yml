@@ -1,10 +1,10 @@
 name: Step 5, Trigger the workflow
 
-# This step triggers after a pull request is merged to `main`
+# This step triggers after "My Starter Workflow" completes a run
 # This step sets STEP to X
 # This step closes <details id=5> and opens <details id=X>
 
-# This will run every time we create push a commit to `main`
+# This will run every time we finish running "My Starter Workflow"
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
