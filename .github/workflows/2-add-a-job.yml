@@ -1,10 +1,10 @@
 name: Step 2, Add a job
 
-# This step triggers after TBD-step-2-event-desc
+# This step triggers after the learner pushes a commit calling the reusable workflow to `reusable-workflow`
 # This step sets STEP to 3
 # This step closes <details id=2> and opens <details id=3>
 
-# This will run every time we TBD-step-2-event-desc
+# This will run every time we push a commit to `reusable-workflow` (to a file other than reusable-workflow.yml)
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
