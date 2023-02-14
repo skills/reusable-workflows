@@ -88,6 +88,7 @@ Let's get started with our first step to see how this would work!
               type: string
    ```
 1. To commit your changes, click **Start commit**, and then **Commit changes**.
+1. (optional) Create a pull request to view all the changes you'll make throughout this course. Click the **Pull Requests** tab, click **New pull request**, set `base: main` and `compare: reusable-workflow`.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
 </details>
@@ -222,13 +223,11 @@ _Nicely done! :partying_face:_
 
 You've added a matrix strategy to your workflow file that is now running on four different versions of node `[14, 16, 18, 20]` instead of the single hard-coded version of only `14`. 
 
-You may not have noticed yet, but I've opened up a pull request called **Reusable workflow example** that is linked to the branch you've been making your file changes to (**reusable-workflow**). Let's navigate to this pull request and merge it so that your workflow file changes will be part of the `main` branch.
+We'll now merge your changes so that your workflow file changes will be part of the `main` branch.
 
 ### :keyboard: Activity: Create and merge your pull request
 
-1. In your repo, click on the **Pull requests** tab.
-1. Click on the **Reusable workflow example** pull request.
-1. Click **Merge pull request**, then click **Confirm merge**.
+1. Merge your changes from `reusable-workflow` into `main`. If you created the pull request in step 1, open that PR and click on **Merge pull request**. If you did not create the pull request earlier, you can do it now by following the instructions in step 1. 
 1. Optionally, click **Delete branch** to delete your `reusable-workflow` branch.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
