@@ -20,28 +20,28 @@ _Make a workflow reusable, call it in another workflow, and use a matrix strateg
   Do not use quotes on the <details> tag attributes.
 -->
 
-<!--step0-->
+<details id=0 open>
+<summary><h2>Welcome</h2></summary>
 
-Reusable workflows offer a simple and powerful way to avoid copying and pasting workflows across your repositories, and adding a matrix strategy lets you use variables in a single job definition to automatically create multiple job runs. 
+TBD-welcome-paragraph
 
-- **Who is this for**: Developers, DevOps engineers, students, managers, teams, GitHub users.
-- **What you'll learn**: How to create and use reusable workflows, create a matrix strategy, trigger workflows, and find workflow logs.
-- **What you'll build**: An Actions workflow with a matrix strategy that calls a reusable workflow to output multiple verisions of node. 
-- **Prerequisites**: In this course you will work with pull requests and YAML workflow files. We recommend you take the [Introduction to GitHub](https://github.com/skills/introduction-to-github) course first or be familiar with GitHub basics, and the [Hello GitHub Actions](https://github.com/skills/hello-github-actions) course for an introduction to GitHub Actions and workflow files.
-- **How long**: This course is five steps long and can be finished in less than one hour.
-- **Attribution**: This Skills course was inspired by a [demo video](https://www.youtube.com/watch?v=MBpyouQtY_M) created by Mickey Gousset ([@mickeygousset](https://github.com/mickeygousset)).
+- **Who is this for**: TBD-audience.
+- **What you'll learn**: TBD-objective.
+- **What you'll build**: TBD-result.
+- **Prerequisites**: TBD-prerequisites.
+- **How long**: This course is TBD-step-count steps long and takes less than TBD-duration to complete.
 
 ## How to start this course
 
-1. Above these instructions, right-click **Use this template** and open the link in a new tab.
-   ![Use this template](https://user-images.githubusercontent.com/1221423/169618716-fb17528d-f332-4fc5-a11a-eaa23562665e.png)
+1. Right-click **Start course** and open the link in a new tab.
+   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](/TBD-generate)
 2. In the new tab, follow the prompts to create a new repository.
    - For owner, choose your personal account or an organization to host the repository.
    - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   ![Create a new repository](https://user-images.githubusercontent.com/1221423/169618722-406dc508-add4-4074-83f0-c7a7ad87f6f3.png)
+   ![Create a new repository](https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png)
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-<!--endstep0-->
+</details>
 
 <!--
   <<< Author notes: Step 1 >>>
