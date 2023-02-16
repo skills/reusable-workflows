@@ -50,7 +50,6 @@ Reusable workflows offer a simple and powerful way to avoid copying and pasting 
   The first step is always the hardest, so pick something easy!
   Link to docs.github.com for further explanations.
   Encourage users to open new tabs for steps!
-  TBD-step-1-notes.
 -->
 
 <details id=1>
@@ -98,7 +97,6 @@ Let's get started with our first step to see how this would work!
   <<< Author notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-2-notes.
 -->
 
 <details id=2>
@@ -163,7 +161,6 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
   <<< Author notes: Step 3 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-3-notes.
 -->
 
 <details id=3>
@@ -214,7 +211,6 @@ Let's add a matrix strategy to the **My Starter Workflow** so we can run our job
   <<< Author notes: Step 4 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-4-notes.
 -->
 
 <details id=4>
@@ -239,7 +235,6 @@ We'll now merge your changes so that your workflow file changes will be part of 
   <<< Author notes: Step 5 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-5-notes.
 -->
 
 <details id=5>
