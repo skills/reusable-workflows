@@ -48,7 +48,10 @@ Reusable workflows offer a simple and powerful way to avoid copying and pasting 
 [![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=reusable-workflows&owner=%40me&name=skills-reusable-workflows&description=My+clone+repository&visibility=public)
 
 1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, follow the prompts to create a new repository. For owner, we recommend your personal account.
+2. In the new tab, most of the prompts will automatically fill in for you.
+   - For owner, choose your personal account or an organization to host the repository.
+   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
 </details>
@@ -66,7 +69,7 @@ Reusable workflows offer a simple and powerful way to avoid copying and pasting 
 
 _Welcome to "Reusable Workflows and Matrix Strategies"! :wave:_
 
-You can do a lot with GitHub Actions! You can automate repetitive tasks, build continuous integration and continuous deployment pipelines, and customize essentially any part of your software development workflow. It doesn't matter if you're just learning about workflows and GitHub Actions for the first time or you're well exerpienced with the process, you'll quickly find yourself repeating automation jobs and steps within the same workflow, and even using the dreaded copy and paste method for workflows across multiple repositories. 
+You can do a lot with GitHub Actions! You can automate repetitive tasks, build continuous integration and continuous deployment pipelines, and customize essentially any part of your software development workflow. It doesn't matter if you're just learning about workflows and GitHub Actions for the first time or you're well exerpienced with the process, you'll quickly find yourself repeating automation jobs and steps within the same workflow, and even using the dreaded copy and paste method for workflows across multiple repositories.
 
 Is there a solution to reduce these repetitive tasks? Yes, I'm glad you asked :wink: Enter **reusable workflows**, a simple and powerful way to avoid copying and pasting workflows across your repositories.
 
@@ -74,9 +77,9 @@ Is there a solution to reduce these repetitive tasks? Yes, I'm glad you asked :w
 
 - Case in point: if you have three different Node applications and you’re building them all the same way, you can use one reusable workflow instead of copying and pasting your workflows again and again.
 
-**I have a workflow, how do I make it reusable?**: A reusable workflow is just like any GitHub Actions workflow with one key difference: it includes a `workflow_call` event trigger, similar to event triggers like `push`, `issues`, and `workflow_dispatch`. This means that all you need to do to make a workflow reusable is to use the workflow call trigger. 
+**I have a workflow, how do I make it reusable?**: A reusable workflow is just like any GitHub Actions workflow with one key difference: it includes a `workflow_call` event trigger, similar to event triggers like `push`, `issues`, and `workflow_dispatch`. This means that all you need to do to make a workflow reusable is to use the workflow call trigger.
 
-Let's get started with our first step to see how this would work! 
+Let's get started with our first step to see how this would work!
 
 ### :keyboard: Activity: Add a `workflow_call` trigger to a workflow
 
@@ -85,7 +88,7 @@ Let's get started with our first step to see how this would work!
 1. From the **main** branch dropdown, click on the **reusable-workflow** branch.
 1. Navigate to the `.github/workflows/` folder, then select the **reusable-workflow.yml** file.
 1. Replace the `workflow_dispatch` event trigger with the `workflow_call` event trigger. It should look like the following:
-   
+
    ```yaml
       name: Reusable Workflow
 
@@ -126,26 +129,26 @@ on:
       node:
         required: true
         type: string
-        
-jobs: 
+
+jobs:
 
   build:
-  
+
     runs-on: ubuntu-latest
-    
+
     steps:
-    
+
       - uses: actions/checkout@v3
-      
+
       - name: Output the input value
         run: |
          echo "The node version to use is: ${{ inputs.node }}"
 ```
 
-The resuable workflow requires an `input` of `node` in order for the workflow to work. You need to make sure that the other workflow you are using to call this reusable workflow outputs a node version. If a node input is detected, the workflow will kick off a job called `build` that runs on ubuntu-latest. 
+The resuable workflow requires an `input` of `node` in order for the workflow to work. You need to make sure that the other workflow you are using to call this reusable workflow outputs a node version. If a node input is detected, the workflow will kick off a job called `build` that runs on ubuntu-latest.
 
 The step within the `build` job uses an action called `checkout@v3` to checkout the code and then a step to output the input value by running an echo command to print to the Actions log console the following message, `The node version to use is: ${{ inputs.node }}`. The node input here is the output node value you need to have in your other workflow.
-  
+
 Okay, now that we know what the reusable workflow is doing, let's now add a new job to another workflow called **my-starter-workflow** to call our reusable workflow. We can do this by using the `uses:` command and then setting the path to the workflow we want to use. We also need to make sure we define that node input or the reusable workflow won't work.
 
 ### :keyboard: Activity: Add a job to your workflow to call the reusable workflow
@@ -153,13 +156,13 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
 1. Navigate to the `.github/workflows/` folder and open the `my-starter-workflow.yml` file.
 1. Add a new job to the workflow called `call-reusable-workflow`.
 1. Add a `uses` command and path the command to the `reusable-workflow.yml` file.
-1. Add a `with` command to pass in a `node` paramater and set the value to `14`. 
+1. Add a `with` command to pass in a `node` paramater and set the value to `14`.
 
    ```yaml
    call-reusable-workflow:
      uses: ./.github/workflows/reusable-workflow.yml
      with:
-       node: 14   
+       node: 14
    ```
 1. To commit your changes, click **Start commit**, and then **Commit changes**.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
@@ -177,8 +180,8 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
 
 _Well done! :sparkles:_
 
-Your **My Starter Workflow** now has a job that outputs the node version of 14 and calls the reusable workflow called **Reusable Workflow**. It then prints a message to the Actions logs of the node version for the build. Now, we haven't checked the Actions logs at the point to see the message, but don't worry, we'll get there after this next step. Let's improve our **My Starter Workflow** a little more but adding a matrix strategy. 
-  
+Your **My Starter Workflow** now has a job that outputs the node version of 14 and calls the reusable workflow called **Reusable Workflow**. It then prints a message to the Actions logs of the node version for the build. Now, we haven't checked the Actions logs at the point to see the message, but don't worry, we'll get there after this next step. Let's improve our **My Starter Workflow** a little more but adding a matrix strategy.
+
 **What is a matrix strategy**: A matrix strategy lets you use variables in a single job definition to automatically create multiple job runs that are based on the combinations of the variables. For example, you can use a matrix strategy to test your code in multiple versions of a language or on multiple operating systems. Below is an example:
 
 ```yaml
@@ -189,10 +192,10 @@ jobs:
         version: [10, 12, 14]
         os: [ubuntu-latest, windows-latest]
 ```
-To define a matrix strategy inside a job, you first need to define the matrix with the keyword `strategy` followed by the nested keyword `matrix`. You can then define variables for the matrix. In the above example, the variables are `version` with the values of `10, 12, and 14`, and another variable called `os` with the values of `ubuntu-latest and windows latest`. 
-  
-The `example_matrix` job will run for each possible combination of the variables. So, in the above example, the workflow will run six jobs, one for each combination of the os and version variables. If you want to run a job for multiple versions, using a matrix strategy is a great solution over writing out 6 different jobs. 
-  
+To define a matrix strategy inside a job, you first need to define the matrix with the keyword `strategy` followed by the nested keyword `matrix`. You can then define variables for the matrix. In the above example, the variables are `version` with the values of `10, 12, and 14`, and another variable called `os` with the values of `ubuntu-latest and windows latest`.
+
+The `example_matrix` job will run for each possible combination of the variables. So, in the above example, the workflow will run six jobs, one for each combination of the os and version variables. If you want to run a job for multiple versions, using a matrix strategy is a great solution over writing out 6 different jobs.
+
 Let's add a matrix strategy to the **My Starter Workflow** so we can run our job on different versions of node instead of the hard-coded single verison of 14.
 
 ### :keyboard: Activity: Use a matrix strategy to run multiple versions
@@ -209,7 +212,7 @@ Let's add a matrix strategy to the **My Starter Workflow** so we can run our job
          nodeversion: [14, 16, 18, 20]
      uses: ./.github/workflows/reusable-workflow.yml
      with:
-       node: ${{ matrix.nodeversion }}   
+       node: ${{ matrix.nodeversion }}
    ```
 1. To commit your changes, click **Start commit**, and then **Commit changes**.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
@@ -227,13 +230,13 @@ Let's add a matrix strategy to the **My Starter Workflow** so we can run our job
 
 _Nicely done! :partying_face:_
 
-You've added a matrix strategy to your workflow file that is now running on four different versions of node `[14, 16, 18, 20]` instead of the single hard-coded version of only `14`. 
+You've added a matrix strategy to your workflow file that is now running on four different versions of node `[14, 16, 18, 20]` instead of the single hard-coded version of only `14`.
 
 We'll now merge your changes so that your workflow file changes will be part of the `main` branch.
 
 ### :keyboard: Activity: Create and merge your pull request
 
-1. Merge your changes from `reusable-workflow` into `main`. If you created the pull request in step 1, open that PR and click on **Merge pull request**. If you did not create the pull request earlier, you can do it now by following the instructions in step 1. 
+1. Merge your changes from `reusable-workflow` into `main`. If you created the pull request in step 1, open that PR and click on **Merge pull request**. If you did not create the pull request earlier, you can do it now by following the instructions in step 1.
 1. Optionally, click **Delete branch** to delete your `reusable-workflow` branch.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
@@ -250,11 +253,11 @@ We'll now merge your changes so that your workflow file changes will be part of 
 <summary><h2>Step 5: Trigger your workflow and view the Actions logs</h2></summary>
 
 _You're almost done. Last step! :heart:_
-  
-Now that the changes have been merged into the `main` branch, let's trigger the **My Starter Workflow** workflow to see everyting in action! But before we do, let's recall what we should expect to see before we run the workflow. 
+
+Now that the changes have been merged into the `main` branch, let's trigger the **My Starter Workflow** workflow to see everyting in action! But before we do, let's recall what we should expect to see before we run the workflow.
   - We should expect to see five jobs running from our *My Starter Workflow**. Do you remember which ones? We have the `build` job and then the `call-reusable-workflow` job that has the matrix strategy.
     ![Screen Shot 2022-09-08 at 9 53 52 AM](https://user-images.githubusercontent.com/6351798/189220189-97361a5e-eecf-4666-a859-e0587354bafe.png)
-  - We should also expect to see the echo message printed as an output from the reusable workflow with the node version for each of the matrix version jobs. 
+  - We should also expect to see the echo message printed as an output from the reusable workflow with the node version for each of the matrix version jobs.
     ![Screen Shot 2022-09-08 at 9 52 41 AM](https://user-images.githubusercontent.com/6351798/189220620-0576540a-366f-44e1-866c-2955af399cdb.png)
 
 ### :keyboard: Activity: Run the My Starter Workflow and view the Actions logs
@@ -264,7 +267,7 @@ Now that the changes have been merged into the `main` branch, let's trigger the 
 1. Wait a few seconds for the workflow run to appear in the queue. Once it shows, select the **My Starter Workflow** from the workflow runs queue.
 
 Notice the list of build jobs on the left. One for the `build` job and four for the different node versions (14, 16, 18, 20) that you are running from your matrix. When one of the node version jobs complete, you can select that job and view the Actions logs for the **Output the input value**. This will print out the message from the reusable workflow file.
-  
+
 When you're done reviewing the Actions logs, return here and refresh the page to finish the course! 🎉
 
 
@@ -289,7 +292,7 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - You created a new job in a separate workflow to call the reusable workflow
 - You added a matrix strategy to run a job on multiple node versions
 - You navigated through the Actions logs to view the workflow runs and results from specific jobs
- 
+
 ### What's next?
 
 - Learn more about GitHub Actions by reading "[Learn GitHub Actions](https://docs.github.com/actions/learn-github-actions)".
