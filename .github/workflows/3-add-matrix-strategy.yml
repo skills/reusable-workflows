@@ -11,7 +11,7 @@ on:
     branches:
       - reusable-workflow
     paths-ignore:
-      - '.github/workflows/reusable-workflow.yml'
+      - ".github/workflows/reusable-workflow.yml"
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:

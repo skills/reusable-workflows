@@ -31,15 +31,16 @@ Let's get started with our first step to see how this would work!
 1. Replace the `workflow_dispatch` event trigger with the `workflow_call` event trigger. It should look like the following:
 
    ```yaml
-      name: Reusable Workflow
+   name: Reusable Workflow
 
-      on:
-        workflow_call:
-          inputs:
-            node:
-              required: true
-              type: string
+   on:
+     workflow_call:
+       inputs:
+         node:
+           required: true
+           type: string
    ```
+
 1. To commit your changes, click **Start commit**, and then **Commit changes**.
 1. (optional) Create a pull request to view all the changes you'll make throughout this course. Click the **Pull Requests** tab, click **New pull request**, set `base: main` and `compare: reusable-workflow`.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.

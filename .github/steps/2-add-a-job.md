@@ -23,18 +23,15 @@ on:
         type: string
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - uses: actions/checkout@v3
 
       - name: Output the input value
         run: |
-         echo "The node version to use is: ${{ inputs.node }}"
+          echo "The node version to use is: ${{ inputs.node }}"
 ```
 
 The resuable workflow requires an `input` of `node` in order for the workflow to work. You need to make sure that the other workflow you are using to call this reusable workflow outputs a node version. If a node input is detected, the workflow will kick off a job called `build` that runs on ubuntu-latest.
@@ -56,5 +53,6 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
      with:
        node: 14
    ```
+
 1. To commit your changes, click **Start commit**, and then **Commit changes**.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.

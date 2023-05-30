@@ -64,19 +64,19 @@ jobs:
             echo "Current step is not 0"
             exit 0
           fi
-          
+
           echo "Make a branch"
           BRANCH=reusable-workflow
           git checkout -b $BRANCH
-          
+
           echo "Make a commit"
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit --allow-empty --message="Create an empty commit"
-          
+
           echo "Push"
           git push --set-upstream origin $BRANCH
-          
+
           echo "Restore main"
           git checkout main
         env:
