@@ -4,7 +4,7 @@
   Include a 1280×640 image, course name in sentence case, and a concise description in emphasis.
   In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
   Next to "About", add description & tags; disable releases, packages, & environments.
-  Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
+  Add your open source license, GitHub uses MIT license.
 -->
 
 # Reusable workflows and matrix strategies
@@ -12,12 +12,9 @@
 _Make a workflow reusable, call it in another workflow, and use a matrix strategy to run multiple versions_
 
 <!--
-  <<< Author notes: Start of the course >>>
+  <<< Author notes: Course start >>>
   Include start button, a note about Actions minutes,
   and tell the learner why they should take the course.
-  Each step should be wrapped in <details>/<summary>, with an `id` set.
-  The start <details> should have `open` as well.
-  Do not use quotes on the <details> tag attributes.
 -->
 
 <details id=0 open>
@@ -29,10 +26,16 @@ Reusable workflows offer a simple and powerful way to avoid copying and pasting 
 - **What you'll learn**: How to create and use reusable workflows, create a matrix strategy, trigger workflows, and find workflow logs.
 - **What you'll build**: An Actions workflow with a matrix strategy that calls a reusable workflow to output multiple verisions of node.
 - **Prerequisites**: In this course you will work with pull requests and YAML workflow files. We recommend you take the [Introduction to GitHub](https://github.com/skills/introduction-to-github) course first or be familiar with GitHub basics, and the [Hello GitHub Actions](https://github.com/skills/hello-github-actions) course for an introduction to GitHub Actions and workflow files.
-- **How long**: This course is five steps long and can be finished in less than one hour.
+- **How long**: This course  can be finished in less than one hour.
 - **Attribution**: This Skills course was inspired by a [demo video](https://www.youtube.com/watch?v=MBpyouQtY_M) created by Mickey Gousset ([@mickeygousset](https://github.com/mickeygousset)).
 
-## How to start this course
+In this course, you will:
+
+1.
+2.
+3.
+
+### How to start this course
 
 <!-- For start course, run in JavaScript:
 'https://github.com/new?' + new URLSearchParams({
@@ -313,4 +316,4 @@ Here's a recap of all the tasks you've accomplished in your repository:
 
 Get help: [Post in our discussion board](https://github.com/skills/.github/discussions) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
 
-&copy; 2022 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
