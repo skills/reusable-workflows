@@ -17,8 +17,7 @@ _Make a workflow reusable, call it in another workflow, and use a matrix strateg
   and tell the learner why they should take the course.
 -->
 
-<details id=0 open>
-<summary><h2>Welcome</h2></summary>
+## Welcome
 
 Reusable workflows offer a simple and powerful way to avoid copying and pasting workflows across your repositories, and adding a matrix strategy lets you use variables in a single job definition to automatically create multiple job runs.
 
@@ -57,7 +56,7 @@ In this course, you will:
    - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 1 >>>
@@ -67,8 +66,7 @@ In this course, you will:
   Encourage users to open new tabs for steps!
 -->
 
-<details id=1>
-<summary><h2>Step 1: Make a workflow reusable</h2></summary>
+## Step 1: Make a workflow reusable
 
 _Welcome to "Reusable Workflows and Matrix Strategies"! :wave:_
 
@@ -106,7 +104,7 @@ Let's get started with our first step to see how this would work!
 1. (optional) Create a pull request to view all the changes you'll make throughout this course. Click the **Pull Requests** tab, click **New pull request**, set `base: main` and `compare: reusable-workflow`.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 2 >>>
@@ -114,8 +112,7 @@ Let's get started with our first step to see how this would work!
   Define terms and link to docs.github.com.
 -->
 
-<details id=2>
-<summary><h2>Step 2: Add a job to call the reusable workflow</h2></summary>
+## Step 2: Add a job to call the reusable workflow
 
 _Nice work! :tada: You made a workflow reusable!_
 
@@ -170,7 +167,7 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
 1. To commit your changes, click **Start commit**, and then **Commit changes**.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 3 >>>
@@ -178,8 +175,7 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
   Define terms and link to docs.github.com.
 -->
 
-<details id=3>
-<summary><h2>Step 3: Add a matrix strategy to your workflow</h2></summary>
+## Step 3: Add a matrix strategy to your workflow
 
 _Well done! :sparkles:_
 
@@ -220,7 +216,7 @@ Let's add a matrix strategy to the **My Starter Workflow** so we can run our job
 1. To commit your changes, click **Start commit**, and then **Commit changes**.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 4 >>>
@@ -228,8 +224,7 @@ Let's add a matrix strategy to the **My Starter Workflow** so we can run our job
   Define terms and link to docs.github.com.
 -->
 
-<details id=4>
-<summary><h2>Step 4: Merge your changes</h2></summary>
+## Step 4: Merge your changes
 
 _Nicely done! :partying_face:_
 
@@ -244,7 +239,7 @@ We'll now merge your changes so that your workflow file changes will be part of 
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
 
-</details>
+
 
 <!--
   <<< Author notes: Step 5 >>>
@@ -252,8 +247,7 @@ We'll now merge your changes so that your workflow file changes will be part of 
   Define terms and link to docs.github.com.
 -->
 
-<details id=5>
-<summary><h2>Step 5: Trigger your workflow and view the Actions logs</h2></summary>
+## Step 5: Trigger your workflow and view the Actions logs
 
 _You're almost done. Last step! :heart:_
 
@@ -275,15 +269,14 @@ When you're done reviewing the Actions logs, return here and refresh the page to
 
 
 
-</details>
+
 
 <!--
   <<< Author notes: Finish >>>
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-<details id=X>
-<summary><h2>Finish</h2></summary>
+## Finish
 
 _Congratulations friend, you've completed this course!_ 🎉
 
@@ -305,7 +298,7 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - Learn more about GitHub by reading the "[Get started](https://docs.github.com/get-started)" docs.
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
-</details>
+
 
 <!--
   <<< Author notes: Footer >>>
