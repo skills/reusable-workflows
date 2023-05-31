@@ -58,10 +58,10 @@ jobs:
 
       # Verify the learner added the file contents
       - name: Check workflow contents, matrix strategy
-        run: ./.github/script/check-file.sh
-        env:
-          FILE: ".github/workflows/my-starter-workflow.yml"
-          SEARCH: "matrix:"
+        uses: skills/action-check-file@v1
+        with:
+          file: ".github/workflows/my-starter-workflow.yml"
+          search: "matrix:"
 
       # In README.md, switch step 3 for step 4.
       - name: Update to step 4
