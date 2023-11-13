@@ -8,7 +8,7 @@
 
 _Well done! :sparkles:_
 
-Your **My Starter Workflow** now has a job that outputs the node version of 14 and calls the reusable workflow called **Reusable Workflow**. It then prints a message to the Actions logs of the node version for the build. Now, we haven't checked the Actions logs at the point to see the message, but don't worry, we'll get there after this next step. Let's improve our **My Starter Workflow** a little more but adding a matrix strategy.
+Your **My Starter Workflow** now has a job that outputs the node version of 14 and calls the reusable workflow called **Reusable Workflow**. It then prints a message to the Actions logs of the node version for the build. Now, we haven't checked the Actions logs at the point to see the message, but don't worry, we'll get there after this next step. Let's improve our **My Starter Workflow** a little more by adding a matrix strategy.
 
 **What is a matrix strategy**: A matrix strategy lets you use variables in a single job definition to automatically create multiple job runs that are based on the combinations of the variables. For example, you can use a matrix strategy to test your code in multiple versions of a language or on multiple operating systems. Below is an example:
 
