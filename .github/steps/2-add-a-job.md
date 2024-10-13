@@ -36,7 +36,7 @@ jobs:
 
 The reusable workflow requires an `input` of `node` in order for the workflow to work. You need to make sure that the other workflow you are using to call this reusable workflow outputs a node version. If a node input is detected, the workflow will kick off a job called `build` that runs on ubuntu-latest.
 
-The step within the `build` job uses an action called `checkout@v3` to checkout the code and then a step to output the input value by running an echo command to print to the Actions log console the following message, `The node version to use is: ${{ inputs.node }}`. The node input here is the output node value you need to have in your other workflow.
+The step within the `build` job uses an action called `checkout@v4` to checkout the code and then a step to output the input value by running an echo command to print to the Actions log console the following message, `The node version to use is: ${{ inputs.node }}`. The node input here is the output node value you need to have in your other workflow.
 
 Okay, now that we know what the reusable workflow is doing, let's now add a new job to another workflow called **my-starter-workflow** to call our reusable workflow. We can do this by using the `uses:` command and then setting the path to the workflow we want to use. We also need to make sure we define that node input or the reusable workflow won't work.
 
