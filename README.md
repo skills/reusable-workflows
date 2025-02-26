@@ -27,7 +27,7 @@ Reusable workflows offer a simple and powerful way to avoid copying and pasting 
 
 - **Who is this for**: Developers, DevOps engineers, students, managers, teams, GitHub users.
 - **What you'll learn**: How to create and use reusable workflows, create a matrix strategy, trigger workflows, and find workflow logs.
-- **What you'll build**: An Actions workflow with a matrix strategy that calls a reusable workflow to output multiple verisions of node.
+- **What you'll build**: An Actions workflow with a matrix strategy that calls a reusable workflow to output multiple versions of node.
 - **Prerequisites**: In this course you will work with pull requests and YAML workflow files. We recommend you take the [Introduction to GitHub](https://github.com/skills/introduction-to-github) course first or be familiar with GitHub basics, and the [Hello GitHub Actions](https://github.com/skills/hello-github-actions) course for an introduction to GitHub Actions and workflow files.
 - **How long**: This course can be finished in less than one hour.
 - **Attribution**: This Skills course was inspired by a [demo video](https://www.youtube.com/watch?v=MBpyouQtY_M) created by Mickey Gousset ([@mickeygousset](https://github.com/mickeygousset)).
