@@ -8,7 +8,7 @@
 
 _You're almost done. Last step! :heart:_
 
-Now that the changes have been merged into the `main` branch, let's trigger the **My Starter Workflow** workflow to see everyting in action! But before we do, let's recall what we should expect to see before we run the workflow.
+Now that the changes have been merged into the `main` branch, let's trigger the **My Starter Workflow** workflow to see everything in action! But before we do, let's recall what we should expect to see before we run the workflow.
 
 - We should expect to see five jobs running from our \*My Starter Workflow\*\*. Do you remember which ones? We have the `build` job and then the `call-reusable-workflow` job that has the matrix strategy.
   ![Screen Shot 2022-09-08 at 9 53 52 AM](https://user-images.githubusercontent.com/6351798/189220189-97361a5e-eecf-4666-a859-e0587354bafe.png)
