@@ -45,7 +45,7 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
 1. Navigate to the `.github/workflows/` folder and open the `my-starter-workflow.yml` file.
 1. Add a new job to the workflow called `call-reusable-workflow`.
 1. Add a `uses` command and path the command to the `reusable-workflow.yml` file.
-1. Add a `with` command to pass in a `node` paramater and set the value to `14`.
+1. Add a `with` command to pass in a `node` parameter and set the value to `14`.
 
    ```yaml
    call-reusable-workflow:

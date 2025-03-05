@@ -10,7 +10,7 @@
 
 _Welcome to "Reusable Workflows and Matrix Strategies"! :wave:_
 
-You can do a lot with GitHub Actions! You can automate repetitive tasks, build continuous integration and continuous deployment pipelines, and customize essentially any part of your software development workflow. It doesn't matter if you're just learning about workflows and GitHub Actions for the first time or you're well exerpienced with the process, you'll quickly find yourself repeating automation jobs and steps within the same workflow, and even using the dreaded copy and paste method for workflows across multiple repositories.
+You can do a lot with GitHub Actions! You can automate repetitive tasks, build continuous integration and continuous deployment pipelines, and customize essentially any part of your software development workflow. It doesn't matter if you're just learning about workflows and GitHub Actions for the first time or you're well experienced with the process, you'll quickly find yourself repeating automation jobs and steps within the same workflow, and even using the dreaded copy and paste method for workflows across multiple repositories.
 
 Is there a solution to reduce these repetitive tasks? Yes, I'm glad you asked :wink: Enter **reusable workflows**, a simple and powerful way to avoid copying and pasting workflows across your repositories.
 
