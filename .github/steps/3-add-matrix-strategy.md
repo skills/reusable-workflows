@@ -25,14 +25,14 @@ To define a matrix strategy inside a job, you first need to define the matrix wi
 
 The `example_matrix` job will run for each possible combination of the variables. So, in the above example, the workflow will run six jobs, one for each combination of the os and version variables. If you want to run a job for multiple versions, using a matrix strategy is a great solution over writing out 6 different jobs.
 
-Let's add a matrix strategy to the **My Starter Workflow** so we can run our job on different versions of node instead of the hard-coded single verison of 14.
+Let's add a matrix strategy to the **My Starter Workflow** so we can run our job on different versions of node instead of the hard-coded single version of 14.
 
 ### :keyboard: Activity: Use a matrix strategy to run multiple versions
 
 1. In the same `my-starter-workflow.yml` file, add a `strategy` keyword under the `call-reusable-workflow` job.
 1. Under `strategy`, add a `matrix` keyword.
 1. Define the `nodeversion` variable to run over the following versions of node `[14, 16, 18, 20]`.
-1. Replace the hard-coded `node` paramter of 14 used in the `with` command, and call the `nodeversion` in the matrix by using the following syntax `${{ matrix.nodeversion }}`. Below is that your job should look like:
+1. Replace the hard-coded `node` parameter of 14 used in the `with` command, and call the `nodeversion` in the matrix by using the following syntax `${{ matrix.nodeversion }}`. Below is that your job should look like:
 
    ```yaml
    call-reusable-workflow:
