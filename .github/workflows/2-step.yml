@@ -60,7 +60,13 @@ jobs:
 
       # START: Check practical exercise
 
-      # Check that the caller workflow references the reusable workflow.
+      - name: Check if ci.yml workflow file exists
+        id: check-ci-file-exists
+        continue-on-error: true
+        uses: skills/exercise-toolkit/actions/file-exists@v0.8.1
+        with:
+          file: .github/workflows/ci.yml
+
       - name: Check for reusable workflow call in ci.yml
         id: check-workflow-call
         continue-on-error: true
@@ -68,22 +74,25 @@ jobs:
         with:
           text-file: .github/workflows/ci.yml
           keyphrase: 'uses:\s*\.\/\.github\/workflows\/reusable-node-quality\.yml'
+          case-sensitive: true
 
-      - name: Check for job-level permissions block in ci.yml
-        id: check-permissions-block
+      - name: Lint ci.yml with actionlint
+        id: check-actionlint
+        continue-on-error: true
+        uses: raven-actions/actionlint@v2.1.1
+        with:
+          files: .github/workflows/ci.yml
+          version: 1.7.10
+          fail-on-error: true
+
+      - name: Check workflow name is exactly CI
+        id: check-workflow-name
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: .github/workflows/ci.yml
-          keyphrase: '^\s*permissions:\s*$'
-
-      - name: Check for contents read permission in ci.yml
-        id: check-contents-read
-        continue-on-error: true
-        uses: skills/action-keyphrase-checker@v1
-        with:
-          text-file: .github/workflows/ci.yml
-          keyphrase: 'contents:\s*read'
+          keyphrase: '^name:\s*CI\s*$'
+          case-sensitive: true
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -96,12 +105,14 @@ jobs:
           vars: |
             step_number: 2
             results_table:
-              - description: "Checked for reusable workflow call in .github/workflows/ci.yml"
+              - description: "Confirmed .github/workflows/ci.yml exists"
+                passed: ${{ steps.check-ci-file-exists.outcome == 'success' }}
+              - description: "Confirmed ci.yml calls the reusable node quality workflow"
                 passed: ${{ steps.check-workflow-call.outcome == 'success' }}
-              - description: "Checked for permissions block in .github/workflows/ci.yml"
-                passed: ${{ steps.check-permissions-block.outcome == 'success' }}
-              - description: "Checked for contents: read permission in .github/workflows/ci.yml"
-                passed: ${{ steps.check-contents-read.outcome == 'success' }}
+              - description: "Confirmed ci.yml passes actionlint syntax checks"
+                passed: ${{ steps.check-actionlint.outcome == 'success' }}
+              - description: "Confirmed workflow name is exactly CI"
+                passed: ${{ steps.check-workflow-name.outcome == 'success' }}
 
       # Add more checks as needed
 
@@ -145,6 +156,8 @@ jobs:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: ${{ env.STEP_3_FILE }}
+          vars: |
+            full_repo_name: ${{ github.repository }}
 
       - name: Create comment - watching for progress
         uses: GrantBirki/comment@v2.1.1

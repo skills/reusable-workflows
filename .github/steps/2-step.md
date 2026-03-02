@@ -1,19 +1,19 @@
 ## Step 2: Let's use the reusable workflow!
 
-Nice! You've finally created a reusable workflow and you're ready to use it.
+Nice! You've now created a reusable workflow and you're ready to use it 🚀
 
 In this step, you'll create a caller workflow that runs on pull requests and delegates quality checks to that reusable workflow.
 
 ### 📖 Theory: How to use reusable workflows?
 
-In this exercise, you will call a reusable workflow from the same repository, but you can also call reusable workflows from other repositories to share standards across teams.
+Reusable workflows can be called from the same repository (as we will do in this exercise), but you can also call reusable workflows from other repositories, which is especially useful to share standards across teams.
 
 | Reusable workflow location | `uses` syntax                                   | Typical use case                                                         |
 | -------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------ |
 | Same repository            | `./.github/workflows/reusable-node-quality.yml` | Keep workflow logic close to one project                                 |
 | Different repository       | `owner/repo/.github/workflows/workflow.yml@ref` | Share standardized workflows across many repositories in an organization |
 
-When using a reusable workflow from another repository, pin `@ref` to a stable tag or SHA for predictable behavior.
+When using a reusable workflow from another repository, pin `@ref` to a stable git tag or SHA for predictable behavior.
 
 ### ⌨️ Activity: Create a CI workflow and call your reusable workflow
 

@@ -20,8 +20,8 @@ jobs:
     name: Start Exercise
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.8.1
     with:
-      exercise-title: "Create and use reusable workflows"
-      intro-message: "Learn how to centralize CI logic with reusable GitHub Actions workflows."
+      exercise-title: "Reusable workflows"
+      intro-message: "Learn how to centralize and standardize your CI automation with reusable workflows."
 
   post_next_step_content:
     name: Post next step content
@@ -51,7 +51,6 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: ${{ env.STEP_1_FILE }}
           vars: |
-            login: ${{ github.actor }}
             full_repo_name: ${{ github.repository }}
 
       - name: Create comment - watching for progress

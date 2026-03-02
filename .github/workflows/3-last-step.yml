@@ -31,12 +31,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
-      # TODO: Remove before publishing
-      # Temporary debug step
-      - run: echo "$FULL_CONTEXT"
-        env:
-          FULL_CONTEXT: ${{ toJSON(github) }}
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Get response templates
         uses: actions/checkout@v6

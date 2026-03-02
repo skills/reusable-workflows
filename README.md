@@ -1,6 +1,6 @@
 # Create and use reusable workflows
 
-_Build a reusable GitHub Actions workflow and call it from another workflow._
+_Learn how to create reusable GitHub Actions workflows and call them from another workflow._
 
 ## Welcome
 

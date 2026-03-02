@@ -116,17 +116,17 @@ jobs:
           vars: |
             step_number: 1
             results_table:
-              - description: "Reusable workflow syntax validation"
-                passed: ${{ steps.actionlint-check.outcome == 'success' }}
-              - description: "Checked if .github/workflows/reusable-node-quality.yml exists"
+              - description: "Reusable workflow file exists at .github/workflows/reusable-node-quality.yml"
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
-              - description: "Checked for workflow_call trigger in reusable workflow"
+              - description: "Checked if the reusable workflow syntax is valid"
+                passed: ${{ steps.actionlint-check.outcome == 'success' }}
+              - description: "The reusable workflow includes a workflow_call trigger"
                 passed: ${{ steps.check-workflow-call.outcome == 'success' }}
-              - description: "Checked for lint job in reusable workflow"
+              - description: "A lint job is defined in the reusable workflow"
                 passed: ${{ steps.check-lint-job.outcome == 'success' }}
-              - description: "Checked for tests job in reusable workflow"
+              - description: "A tests job is defined in the reusable workflow"
                 passed: ${{ steps.check-tests-job.outcome == 'success' }}
-              - description: "Checked for e2e job in reusable workflow"
+              - description: "An e2e job is defined in the reusable workflow"
                 passed: ${{ steps.check-e2e-job.outcome == 'success' }}
 
       # END: Check practical exercise
@@ -169,6 +169,8 @@ jobs:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: ${{ env.STEP_2_FILE }}
+          vars: |
+            full_repo_name: ${{ github.repository }}
 
       - name: Create comment - watching for progress
         uses: GrantBirki/comment@v2.1.1
@@ -176,7 +178,7 @@ jobs:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-
+            
       - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "${{github.workflow}}"
