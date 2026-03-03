@@ -17,3 +17,7 @@ Here's a recap of your accomplishments:
   - Build automations with [AI in Actions](https://github.com/skills/ai-in-actions)
   - Learn more about [GitHub Pages](https://github.com/skills/github-pages)
   - Create your own action in [Write JavaScript Actions](https://github.com/skills/write-javascript-actions)
+- Follow-up reading on reusable workflows:
+  - [Using a matrix strategy with a reusable workflow](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#using-a-matrix-strategy-with-a-reusable-workflow)
+  - [Nesting Reusable Workflows](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#nesting-reusable-workflows)
+  - [Passing secrets to nested workflows](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#passing-secrets-to-nested-workflows)

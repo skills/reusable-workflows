@@ -4,7 +4,7 @@ Your company Octogames has been continuously shipping new web games! You, as the
 
 You find yourself copy-pasting the same workflow logic across repositories. In this exercise, you'll create a reusable workflow to **centralize CI logic**, **standardize automation**, and **reuse it across repositories**.
 
-<img width="900" alt="descriptive alt text" src="../images/octomatch.png" />
+<img width="900" alt="image showing the octomatch game" src="../images/octomatch.png" />
 
 ### 📖 Theory: What makes a workflow reusable?
 

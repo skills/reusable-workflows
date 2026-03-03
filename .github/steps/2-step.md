@@ -59,10 +59,7 @@ Let's see your workflow running by opening a pull request!
 1. In another browser tab, navigate to the [Pull requests](https://github.com/{{ full_repo_name}}/pulls) section of your repository and open a new pull request from the `reusable-workflows` branch to `main`.
 1. As you scroll down, you will see the CI workflow running three separate jobs.
 
+    <img width="600" alt="image showing PR checks running" src="../images/ci-checks-running.png" />
 
+1. With the pull request open Mona will prepare the next step in this exercise or provide some feedback!
 
-<details>
-<summary>Having trouble? 🤷</summary><br/>
-
-
-</details>
