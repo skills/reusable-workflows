@@ -9,8 +9,11 @@ _Learn how to create reusable GitHub Actions workflows and call them from anothe
 - **What you'll build**: A CI setup that runs reusable quality checks, deploys to GitHub Pages, and comments deployment details on pull requests.
 - **Prerequisites**:
   - Basic familiarity with GitHub Actions workflows
+  - Recommended GitHub Skills exercises:
+    - [Hello GitHub Actions](https://github.com/skills/hello-github-actions)
+    - [Test with Actions](https://github.com/skills/test-with-actions/tree/main/src)
 
-- **How long**: This exercise takes less than 30 minutes to complete.
+- **How long**: This exercise takes less than an hour to complete.
 
 In this exercise, you will:
 
