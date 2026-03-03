@@ -9,15 +9,14 @@ _Learn how to create reusable GitHub Actions workflows and call them from anothe
 - **What you'll build**: A CI setup that runs reusable quality checks, deploys to GitHub Pages, and comments deployment details on pull requests.
 - **Prerequisites**:
   - Basic familiarity with GitHub Actions workflows
-  - A GitHub account with permission to create repositories from templates
 
 - **How long**: This exercise takes less than 30 minutes to complete.
 
 In this exercise, you will:
 
-1. Create a reusable workflow using `workflow_call`.
-1. Call that reusable workflow from a CI workflow.
-1. Add permissions-aware deployment and PR feedback jobs.
+1. Create a reusable workflow from scratch and use it in another workflow.
+1. Deeply understand how permissions work across caller and reusable workflows.
+1. Expand your CI workflow to deploy to GitHub Pages and comment on pull requests with deployment
 
 ### How to start this exercise
 
@@ -42,6 +41,3 @@ If the exercise isn't ready in 20 seconds, please check the [Actions](../../acti
 
 </details>
 
----
-
-&copy; 2026 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
