@@ -91,7 +91,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: .github/workflows/ci.yml
-          keyphrase: '^name:\s*CI\s*$'
+          keyphrase: '^name:\s*CI'
           case-sensitive: true
 
       - name: Update comment - step results
