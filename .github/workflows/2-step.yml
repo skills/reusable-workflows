@@ -166,6 +166,20 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
 
+      - name: Wait for CI workflow run to complete
+        # We must wait for the CI workflow to complete before enabling Step 3.
+        # Step 3 triggers on `workflow_run: CI completed`. If we enable Step 3
+        # while CI is still running, the completion event will trigger Step 3
+        # prematurely (before the learner has done the Step 3 work).
+        uses: skills/exercise-toolkit/actions/wait-for-workflow@action/wait-for-workflow # TODO: Replace with tagged version
+        with:
+          workflow-id: ci.yml
+          status: completed
+          head-sha: ${{ github.event.pull_request.head.sha }}
+          polling-interval: 10
+          timeout: 180
+          fail-on-timeout: false
+      
       - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "${{github.workflow}}"
