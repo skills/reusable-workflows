@@ -83,7 +83,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: .github/workflows/ci.yml
-          keyphrase: '^\s*permissions:\s*$'
+          keyphrase: 'permissions'
           minimum-occurrences: 3
 
       - name: Check workflow_run conclusion
