@@ -15,7 +15,6 @@
         "redhat.vscode-yaml",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
-        "dbaeumer.vscode-eslint",
         "ms-playwright.playwright"
 
       ],
