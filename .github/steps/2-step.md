@@ -6,14 +6,16 @@ In this step, you'll create a caller workflow that runs on pull requests and del
 
 ### 📖 Theory: How to use reusable workflows?
 
-Reusable workflows can be called from the same repository (as we will do in this exercise), but you can also call reusable workflows from other repositories, which is especially useful to share standards across teams.
+Reusable workflows can be called from the same repository (as we will do in this exercise), but you can also call reusable workflows from other repositories to share standards across teams.
 
-| Reusable workflow location | `uses` syntax                                   | Typical use case                                                         |
-| -------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------ |
-| Same repository            | `./.github/workflows/reusable-node-quality.yml` | Keep workflow logic close to one project                                 |
-| Different repository       | `owner/repo/.github/workflows/workflow.yml@ref` | Share standardized workflows across many repositories in an organization |
+| Reusable workflow location | Reference format | Typical use case |
+| -------------------------- | ---------------- | ---------------- |
+| Same repository            | `./.github/workflows/reusable-node-quality.yml` | Reuse logic across multiple workflows in the same repository |
+| Different repository       | `owner/repo/.github/workflows/workflow.yml@v1` | Share standards across many repositories in an organization |
 
-When using a reusable workflow from another repository, pin `@ref` to a stable git tag or SHA for predictable behavior.
+
+> [!IMPORTANT]
+> When using a reusable workflow from another repository, pin to a stable tag or commit SHA for predictable behavior and better security.
 
 ### ⌨️ Activity: Create a CI workflow and call your reusable workflow
 
@@ -27,38 +29,40 @@ Let's start working on our CI workflow that will run on pull requests and call t
 
 1. Within that file copy the following workflow content:
 
-    ```yaml
-    name: CI
+   ```yaml
+   name: CI
 
-    on:
-      pull_request:
-        branches:
-          - main
+   on:
+     pull_request:
+       branches:
+         - main
 
-    permissions:
-      contents: read
+   permissions:
+     contents: read
 
-    jobs:
-      quality:
-        uses: ./.github/workflows/reusable-node-quality.yml
-        with:
-          node-version: 24
+   jobs:
+     quality:
+       uses: ./.github/workflows/reusable-node-quality.yml
+       with:
+         node-version: 24
+   ```
 
-    ```
+   This workflow will run on every pull request change targeting `main` and will call the reusable workflow you created in the previous step.
 
-    This workflow will run on every pull request change targeting `main` and will call the reusable workflow you created in the previous step.
+   > ✨ A lot cleaner, isn't it? If your node quality checks are standardized across many repositories, you can call this reusable workflow from all of them and maintain it in one place!
 
-    > ✨ A lot cleaner, isn't it? If your node quality checks are standardized across many repositories, you can call this reusable workflow from all of them and maintain it in one place!
-
-  1. Commit and push your `ci.yml` changes to the `reusable-workflows` branch.
+1. Commit and push your `ci.yml` changes to the `reusable-workflows` branch.
 
 ### ⌨️ Activity: See your reusable workflow in action
 
 Let's see your workflow running by opening a pull request!
 
-1. In another browser tab, navigate to the [Pull requests](https://github.com/{{ full_repo_name}}/pulls) section of your repository and open a new pull request from the `reusable-workflows` branch to `main`.
-1. As you scroll down, you may need to expand the **Checks** section. Then you will see the CI workflow running three separate jobs in detail.
+1. In another browser tab, navigate to the [Pull requests](https://github.com/{{ full_repo_name}}/pulls) section of your repository.
 
+1. Open a new pull request from the `reusable-workflows` branch to `main`.
+   > ⚠️ **Warning:** Do not merge this pull request yet. You will keep working on this same pull request in the next step.
+
+1. As you scroll down, you may need to expand the **Checks** section. Then you will see the CI workflow running three separate jobs in detail.
 
     <img width="600" alt="image showing PR checks running" src="../images/ci-checks-running.png" />
 
