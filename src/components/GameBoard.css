@@ -1,0 +1,206 @@
+.game-board-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-template-areas:
+    'board hud'
+    'status hud';
+  align-items: start;
+  gap: 1rem 1.4rem;
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.game-hud {
+  grid-area: hud;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #3e3e42;
+  border-radius: 8px;
+  background: #252526;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 0.5rem;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #3e3e42;
+}
+
+.stat-chip {
+  display: inline-block;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #4ec9b0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.health-section {
+  margin-top: 0;
+  width: 100%;
+  color: #d4d4d4;
+  font-size: 0.9rem;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #3e3e42;
+}
+
+.health-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #858585;
+}
+
+.health-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  color: #4ec9b0;
+}
+
+.health-bar {
+  margin-top: 0.45rem;
+  width: 100%;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: #1e1e1e;
+  overflow: hidden;
+  border: 1px solid #3e3e42;
+}
+
+.health-bar-fill {
+  height: 100%;
+  background: #4ec9b0;
+  transition: width 0.2s ease;
+}
+
+.health-bar-fill-warn {
+  background: #dcdcaa;
+}
+
+.health-bar-fill-danger {
+  background: #f48771;
+}
+
+.new-game-btn {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #f48771;
+  border-radius: 6px;
+  background: #1e1e1e;
+  color: #f48771;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.new-game-btn:hover {
+  background: #f48771;
+  color: #1e1e1e;
+}
+
+.new-game-btn:focus-visible {
+  outline: 2px solid #f48771;
+  outline-offset: 2px;
+}
+
+.win-message {
+  grid-area: status;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4ec9b0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: #252526;
+  border: 1px solid #3e3e42;
+  width: 100%;
+}
+
+.lose-message {
+  grid-area: status;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f48771;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: #252526;
+  border: 1px solid #f48771;
+  width: 100%;
+}
+
+.rule-hint {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #858585;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.rules-section {
+  width: 100%;
+}
+
+.panel-heading {
+  margin: 0 0 0.5rem;
+  color: #4ec9b0;
+  font-size: 1.35rem;
+  border-bottom: 1px solid #3e3e42;
+  padding-bottom: 0.35rem;
+}
+
+.game-board {
+  grid-area: board;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 3px solid #f48771;
+  border-radius: 4px;
+  background-color: #252526;
+  background-image:
+    linear-gradient(rgba(62, 62, 66, 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(62, 62, 66, 0.45) 1px, transparent 1px);
+  background-size: 24px 24px;
+  box-shadow: 0 0 28px rgba(244, 135, 113, 0.22);
+}
+
+@media (max-width: 900px) {
+  .game-board-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'board'
+      'hud'
+      'status';
+    gap: 0.9rem;
+    max-width: 680px;
+  }
+
+  .game-hud {
+    padding: 0.85rem;
+  }
+}

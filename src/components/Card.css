@@ -1,0 +1,102 @@
+.card {
+  width: 100%;
+  aspect-ratio: 1;
+  perspective: 600px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+
+.card.matched {
+  cursor: default;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner,
+.card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background: #252526;
+  border: 1px solid #3e3e42;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-back {
+  background: #1e1e1e;
+  border: 1px solid #3e3e42;
+}
+
+.card-front-image {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  background: #1e1e1e;
+  padding: 0;
+}
+
+.card-front-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-name {
+  width: 100%;
+  margin: 0;
+  padding: 0.4rem 0.25rem;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  text-align: center;
+  color: #858585;
+  background: #1e1e1e;
+  border-top: 1px solid #3e3e42;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card.matched .card-front {
+  border-color: #4ec9b0;
+  box-shadow: 0 0 10px rgba(78, 201, 176, 0.3);
+}
+
+.card:not(.flipped):not(.matched):hover .card-back {
+  border-color: #f48771;
+}
+
+.card:focus-visible {
+  outline: 2px solid #f48771;
+}

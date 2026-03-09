@@ -1,0 +1,36 @@
+
+{
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/actionlint:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+
+  "forwardPorts": [5173, 4173],
+  "postCreateCommand": "npm ci",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.copilot",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-playwright.playwright"
+
+      ],
+      "settings": {
+        "[yaml]": {
+          "editor.tabSize": 2,
+          "editor.defaultFormatter": "redhat.vscode-yaml",
+          "editor.insertSpaces": true
+        },
+        "files.exclude": {
+          ".github/images": true,
+          ".github/steps": true,
+          ".github/workflows/**-exercise.yml": true,
+          ".github/workflows/**-step.yml": true
+        }
+      }
+    }
+  }
+}
