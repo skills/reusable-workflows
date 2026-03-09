@@ -38,7 +38,7 @@ Let's use **GitHub Codespaces** to set up a cloud-based development environment 
 
 ### ⌨️ Activity: Create a reusable workflow
 
-Let's start off by creating a reusable workflow for the Node.js projects in your company. This workflow will run linting, tests with coverage reporting, and end-to-end tests with Playwright.
+Let's start off by creating a reusable workflow for the Node.js projects in your company. This workflow will run linting, tests with coverage reporting, and end-to-end tests with [Playwright](https://playwright.dev/).
 
 1. In your codespace create a new branch named exactly `reusable-workflows` and switch to it.
 
