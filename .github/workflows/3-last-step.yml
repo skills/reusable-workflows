@@ -18,7 +18,7 @@ env:
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.8.1
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.0
 
   check_step_work:
     name: Check step work
@@ -40,7 +40,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.8.1
+          ref: v0.9.0
 
       - name: Find last comment
         id: find-last-comment
@@ -83,7 +83,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: .github/workflows/ci.yml
-          keyphrase: 'permissions'
+          keyphrase: "permissions"
           minimum-occurrences: 3
 
       - name: Check workflow_run conclusion
@@ -141,7 +141,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.8.1
+          ref: v0.9.0
 
       - name: Create comment - step finished - final review next
         uses: GrantBirki/comment@v2.1.1
@@ -165,7 +165,7 @@ jobs:
   finish_exercise:
     name: Finish Exercise
     needs: [find_exercise, post_review_content]
-    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.8.1
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.9.0
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
       exercise-title: "Create and use reusable workflows"

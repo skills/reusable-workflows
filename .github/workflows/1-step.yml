@@ -17,7 +17,7 @@ env:
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.8.1
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.0
 
   check_step_work:
     name: Check step work
@@ -36,7 +36,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.8.1
+          ref: v0.9.0
 
       - name: Find last comment
         id: find-last-comment
@@ -69,7 +69,7 @@ jobs:
       - name: Check if reusable workflow file exists
         id: check-file-exists
         continue-on-error: true
-        uses: skills/exercise-toolkit/actions/file-exists@v0.8.1
+        uses: skills/exercise-toolkit/actions/file-exists@v0.9.0
         with:
           file: .github/workflows/reusable-node-quality.yml
 
@@ -152,7 +152,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.8.1
+          ref: v0.9.0
 
       - name: Create comment - step finished
         uses: GrantBirki/comment@v2.1.1
@@ -178,7 +178,7 @@ jobs:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-            
+
       - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "${{github.workflow}}"

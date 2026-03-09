@@ -20,7 +20,7 @@ env:
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.8.1
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.0
 
   check_step_work:
     name: Check step work
@@ -39,7 +39,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.8.1
+          ref: v0.9.0
 
       - name: Find last comment
         id: find-last-comment
@@ -63,7 +63,7 @@ jobs:
       - name: Check if ci.yml workflow file exists
         id: check-ci-file-exists
         continue-on-error: true
-        uses: skills/exercise-toolkit/actions/file-exists@v0.8.1
+        uses: skills/exercise-toolkit/actions/file-exists@v0.9.0
         with:
           file: .github/workflows/ci.yml
 
@@ -139,7 +139,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.8.1
+          ref: v0.9.0
 
       - name: Create comment - step finished
         uses: GrantBirki/comment@v2.1.1
@@ -171,7 +171,7 @@ jobs:
         # Step 3 triggers on `workflow_run: CI completed`. If we enable Step 3
         # while CI is still running, the completion event will trigger Step 3
         # prematurely (before the learner has done the Step 3 work).
-        uses: skills/exercise-toolkit/actions/wait-for-workflow@action/wait-for-workflow # TODO: Replace with tagged version
+        uses: skills/exercise-toolkit/actions/wait-for-workflow@v0.9.0
         with:
           workflow-id: ci.yml
           status: completed
@@ -179,7 +179,7 @@ jobs:
           polling-interval: 10
           timeout: 180
           fail-on-timeout: false
-      
+
       - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "${{github.workflow}}"

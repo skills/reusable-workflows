@@ -18,7 +18,7 @@ jobs:
     if: |
       !github.event.repository.is_template
     name: Start Exercise
-    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.8.1
+    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.9.0
     with:
       exercise-title: "Create and use reusable workflows"
       intro-message: "Learn how to centralize and standardize your CI automation with reusable workflows."
@@ -42,7 +42,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.8.1
+          ref: v0.9.0
 
       - name: Create comment - add step content
         uses: GrantBirki/comment@v2.1.1
