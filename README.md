@@ -19,7 +19,7 @@ In this exercise, you will:
 
 1. Create a reusable workflow from scratch and use it in another workflow.
 1. Deeply understand how permissions work across caller and reusable workflows.
-1. Expand your CI workflow to deploy to GitHub Pages and comment on pull requests with deployment
+1. Expand your CI workflow to deploy to GitHub Pages and comment on pull requests with deployment details.
 
 ### How to start this exercise
 
