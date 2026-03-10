@@ -27,7 +27,7 @@ Let's start working on our CI workflow that will run on pull requests and call t
    ci.yml
    ```
 
-1. Within that file copy the following workflow content:
+1. Within that file, add the following workflow content:
 
    ```yaml
    name: CI

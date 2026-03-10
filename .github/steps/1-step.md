@@ -77,7 +77,7 @@ Let's start off by creating a reusable workflow for the Node.js projects in your
 
    These are the jobs that you found yourself copy-pasting across repositories the most, so it makes sense to centralize them in a reusable workflow.
 
-   Take a moment to understand and add the following content to the `reusable-node-quality.yml` file:
+   Take a moment to understand and add the following content to the bottom of the `reusable-node-quality.yml` workflow file:
 
    ```yaml
    jobs:
