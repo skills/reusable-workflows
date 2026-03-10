@@ -78,7 +78,7 @@ Let's use that!
          with:
            issue-number: {% raw %}${{ github.event.pull_request.number }}{% endraw %}
            body: |
-             |  |  |
+             | Item | Link |
              | --- | --- |
              | 🌐 GitHub Pages URL | {% raw %}${{ needs.github-pages.outputs.page_url }}{% endraw %} |
              | 🧾 Workflow logs | https://github.com/{% raw %}${{ github.repository }}{% endraw %}/actions/runs/{% raw %}${{ github.run_id }}{% endraw %} |
@@ -104,7 +104,7 @@ We've done a lot of work in this step! The YAML indentation can be tricky, so le
 
    If there are any errors, fix them before proceeding.
 
-1. Commit your `ci.yml` changes to the `reusable-workflows` branch.
+1. Commit and push your `ci.yml` changes to the `reusable-workflows` branch.
 1. Monitor the `CI` workflow running on your pull request and wait for it to fully complete.
 1. Once it's done you should see a new comment on your pull request with the GitHub Pages URL where you can play **Octomatch**!
 1. When the `CI` workflow completes Mona will be notified to check your progress and provide a review!
